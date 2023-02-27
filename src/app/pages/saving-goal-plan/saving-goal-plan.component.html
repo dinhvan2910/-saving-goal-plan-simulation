@@ -1,0 +1,66 @@
+<div class="main-container">
+  <div class="title-content-header">
+    <span>Let's plan your <b>saving goal.</b></span>
+  </div>
+  <div class="saving-goal-container">
+    <div class="header-info">
+      <mat-icon class="house-icon" aria-hidden="false" svgIcon="house"></mat-icon>
+      <div class="label-info-right">
+        <div class="fz-24"><b>Buy a house</b></div>
+        <div class="fz-16 saving-goal-label">Saving goal</div>
+      </div>
+    </div>
+    <div class="input-content mt-24p">
+      <div class="total-amount">
+        <div class="fz-14">Total amount</div>
+        <mat-form-field appearance="outline" class="custom-form-field">
+          <span matPrefix>
+            <mat-icon class="dollar-icon" aria-hidden="false" svgIcon="dollar"></mat-icon>
+          </span>
+          <input
+            matInput
+            type="text"
+            class="input-amount"
+            mask="separator.2"
+            thousandSeparator=","
+            [(ngModel)]="amount"
+            (ngModelChange)="setDataMonthly()" />
+        </mat-form-field>
+      </div>
+      <div class="reach-goal">
+        <div class="fz-14">Reach goal by</div>
+        <div
+          class="reach-date-input"
+          tabindex="1"
+          (keydown.ArrowLeft)="onChangeMonth('previous')"
+          (keydown.ArrowRight)="onChangeMonth('next')">
+          <mat-icon
+            class="change-month-icon"
+            (click)="onChangeMonth('previous')"
+            [ngClass]="totalMonth <= 1 ? 'disable-change-month' : ''">
+            keyboard_arrow_left
+          </mat-icon>
+          <div class="text-center">
+            <div class="month">{{ reachDate.toLocaleString('en-EN', { month: 'long' }) }}</div>
+            <div class="year">{{ reachDate.getFullYear() }}</div>
+          </div>
+          <mat-icon class="change-month-icon" (click)="onChangeMonth('next')"> keyboard_arrow_right </mat-icon>
+        </div>
+      </div>
+    </div>
+    <div class="monthly-amount mt-24p">
+      <div class="amount-top">
+        <div class="fz-20">Monthly amount</div>
+        <div class="amount-data">{{ monthlyAmount }}</div>
+      </div>
+      <div class="description-bottom">
+        You’re planning <b>{{ totalMonth }} monthly deposits</b> to reach your
+        <b>{{ amount.toLocaleString('en-EN') }}</b> goal by
+        <b>{{ reachDate.toLocaleString('en', { month: 'long' }) }} {{ reachDate.getFullYear() }}.</b>
+      </div>
+    </div>
+    <div class="confirm-btn-footer mt-32p">
+      <button class="confirm-btn" (click)="onConfirm()">Confirm</button>
+    </div>
+  </div>
+</div>

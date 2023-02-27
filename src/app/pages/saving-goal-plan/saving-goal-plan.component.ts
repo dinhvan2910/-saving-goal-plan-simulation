@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { LOCAL_STORAGE_KEY } from '@core/configs';
 import * as moment from "moment";
 
 @Component({
@@ -18,7 +19,13 @@ export class SavingGoalPlanComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.onChangeMonth('next');
+    this.amount = Number(localStorage.getItem(LOCAL_STORAGE_KEY.amount) || '0');
+    if (localStorage.getItem(LOCAL_STORAGE_KEY.reachDate)) {
+      this.reachDate = new Date(localStorage.getItem(LOCAL_STORAGE_KEY.reachDate));
+      this.setDataMonthly();
+    } else {
+      this.onChangeMonth('next');
+    }
   }
 
   onChangeMonth(dir: string) {
@@ -61,6 +68,8 @@ export class SavingGoalPlanComponent implements OnInit {
     this.totalMonth = months <= 0 ? 0 : months;
     const monthlyAmount = this.amount / this.totalMonth;
     this.monthlyAmount = '$' + monthlyAmount.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+    localStorage.setItem(LOCAL_STORAGE_KEY.amount, this.amount.toString());
+    localStorage.setItem(LOCAL_STORAGE_KEY.reachDate, this.reachDate.toISOString());
   }
 
   onConfirm() {

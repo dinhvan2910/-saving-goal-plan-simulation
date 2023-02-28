@@ -1,23 +1,30 @@
-# SAVING_GOAL_PLAN_SIMULATION
+# ORIGIN
+
+<p>Origin is a platform that helps our customers' employees put their financial lives on track.</p></br>
+<p>One key to financial well-being is planning & saving for your goals. Users can have many saving.</p></br>
+<p>goals (e.g. go to college or throw a wedding party) and it is our job to help them accomplish it.</p></br>
+<p>This is a piece of our savings feature by creating the savings plan simulation screen.</p></br>
+
+## This is the Saving Goal Plan Simulation Screen
+
+![](/src/assets/images/origin-desktop.png)
+![](/src/assets/images/origin-mobile.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
 
-## Development server
+## System requirement
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The Angular CLI requires a minimum Node.js version of either v14.20, v16.13 or v18.10.
 
-## Code scaffolding
+## How to run app
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<b>1. Install node modules </b></br>
+Run `npm install`
+
+<b>2. Start app</b></br>
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you
+change any of the source files.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

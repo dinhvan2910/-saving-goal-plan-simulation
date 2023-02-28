@@ -33,7 +33,9 @@
               "src/app/core/styles/styles.scss"
             ],
             "scripts": [],
-            "allowedCommonJsDependencies": [],
+            "allowedCommonJsDependencies": [
+              "moment"
+            ],
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,

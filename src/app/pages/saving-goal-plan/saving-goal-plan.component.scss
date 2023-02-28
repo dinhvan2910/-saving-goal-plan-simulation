@@ -51,38 +51,81 @@
 
         .custom-form-field {
           width: 100%;
+          height: 56px;
 
-          .dollar-icon {
-            width: 24px;
-            height: 24px;
-            margin: 16px 8px 16px 12px;
+          .mat-form-field-infix {
+            top: -0.25em;
+            padding: 0.45em 0.5em 0.45em 0;
+
+            .input-amount {
+              font-family: 'Rubik';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 24px;
+              line-height: 120%;
+              color: #4D6475;
+            }
           }
 
-          .input-amount {
-            margin-top: 5px;
-            font-family: 'Rubik';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 24px;
-            line-height: 120%;
-            color: #4D6475;
+          .mat-form-field-outline {
+            background-color: #fff;
+            top: 0;
           }
 
-          .mat-mdc-form-field-infix {
-            padding-top: 10px;
-            padding-bottom: 10px;
-          }
+          &.mat-form-field-appearance-outline {
 
-          .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading,
-          .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch,
-          .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
-            border-color: #e9eef2;
-          }
+            .mat-form-field-wrapper {
+              margin: 0;
+              padding-bottom: 0;
+              background-color: #fff;
+              height: 100%;
+            }
 
-          .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__leading,
-          .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__notch,
-          .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__trailing {
-            border-color: #1b31a8;
+            .mat-form-field-flex {
+              padding: 0;
+              height: 100%;
+              margin-top: 0;
+            }
+
+            .mat-form-field-prefix,
+            .mat-form-field-suffix {
+              top: -0.5em;
+
+              .dollar-icon {
+                width: 24px;
+                height: 24px;
+                margin: 0 8px 0 12px;
+              }
+            }
+
+            .mat-form-field-outline-start,
+            .mat-form-field-outline-end {
+              border-color: #e9eef2;
+            }
+
+            .mat-form-field-outline-start {
+              border-radius: 4px 0 0 4px;
+            }
+
+            .mat-form-field-outline-end {
+              border-radius: 0 4px 4px 0;
+            }
+
+            .mat-form-field-outline-thick .mat-form-field-outline-start,
+            .mat-form-field-outline-thick .mat-form-field-outline-end,
+            .mat-form-field-outline-thick .mat-form-field-outline-gap {
+              border-color: #1b31a8;
+            }
+
+            .mat-form-field-suffix .mat-icon-button {
+              top: 0.4em;
+            }
+
+            &.no-bottom {
+              .mat-form-field-label {
+                margin-top: 0;
+              }
+            }
           }
         }
       }
@@ -154,6 +197,7 @@
         background-color: #f4f8fa;
         font-size: 12px;
         padding: 24px 32px;
+        word-break: break-word;
       }
     }
 

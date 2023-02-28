@@ -1,18 +1,18 @@
 <div class="main-container">
   <div class="title-content-header">
-    <span>Let's plan your <b>saving goal.</b></span>
+    <span [innerHTML]="'TITLE_HEADER' | translate"></span>
   </div>
   <div class="saving-goal-container">
     <div class="header-info">
       <mat-icon class="house-icon" aria-hidden="false" svgIcon="house"></mat-icon>
       <div class="label-info-right">
-        <div class="fz-24"><b>Buy a house</b></div>
-        <div class="fz-16 saving-goal-label">Saving goal</div>
+        <div class="fz-24 fw-500">{{ 'BUY_A_HOUSE' | translate }}</div>
+        <div class="fz-16 saving-goal-label">{{ 'SAVING_GOAL' | translate }}</div>
       </div>
     </div>
     <div class="input-content mt-24p">
       <div class="total-amount">
-        <div class="fz-14">Total amount</div>
+        <div class="fz-14">{{ 'TOTAL_AMOUNT' | translate }}</div>
         <mat-form-field appearance="outline" class="custom-form-field">
           <span matPrefix>
             <mat-icon class="dollar-icon" aria-hidden="false" svgIcon="dollar"></mat-icon>
@@ -23,12 +23,13 @@
             class="input-amount"
             mask="separator.2"
             thousandSeparator=","
+            separatorLimit="9999999999999"
             [(ngModel)]="amount"
             (ngModelChange)="setDataMonthly()" />
         </mat-form-field>
       </div>
       <div class="reach-goal">
-        <div class="fz-14">Reach goal by</div>
+        <div class="fz-14">{{ 'REACH_GOAL_BY' | translate }}</div>
         <div
           class="reach-date-input"
           tabindex="1"
@@ -41,7 +42,7 @@
             keyboard_arrow_left
           </mat-icon>
           <div class="text-center">
-            <div class="month">{{ reachDate.toLocaleString('en-EN', { month: 'long' }) }}</div>
+            <div class="month">{{ reachDate | date : 'MMMM' }}</div>
             <div class="year">{{ reachDate.getFullYear() }}</div>
           </div>
           <mat-icon class="change-month-icon" (click)="onChangeMonth('next')"> keyboard_arrow_right </mat-icon>
@@ -50,17 +51,23 @@
     </div>
     <div class="monthly-amount mt-24p">
       <div class="amount-top">
-        <div class="fz-20">Monthly amount</div>
+        <div class="fz-20">{{ 'MONTHLY_AMOUNT' | translate }}</div>
         <div class="amount-data">{{ monthlyAmount }}</div>
       </div>
-      <div class="description-bottom">
-        You’re planning <b>{{ totalMonth }} monthly deposits</b> to reach your
-        <b>{{ amount.toLocaleString('en-EN') }}</b> goal by
-        <b>{{ reachDate.toLocaleString('en', { month: 'long' }) }} {{ reachDate.getFullYear() }}.</b>
-      </div>
+      <div
+        class="description-bottom"
+        [innerHTML]="
+          'DESCRIPTION_BOTTOM'
+            | translate
+              : {
+                  totalMonth,
+                  amount: amount | mask : 'separator' : ',',
+                  reachDate: reachDate | date : 'MMMM y'
+                }
+        "></div>
     </div>
     <div class="confirm-btn-footer mt-32p">
-      <button class="confirm-btn" (click)="onConfirm()">Confirm</button>
+      <button class="confirm-btn" (click)="onConfirm()">{{ 'CONFIRM' | translate }}</button>
     </div>
   </div>
 </div>

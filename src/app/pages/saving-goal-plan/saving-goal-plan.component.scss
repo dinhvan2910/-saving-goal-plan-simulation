@@ -8,7 +8,7 @@
   .title-content-header {
     color: #1b31a8;
     font-size: 20px;
-    line-height: 24px;
+    line-height: 120%;
     padding-top: 48px;
     text-align: center;
   }
@@ -25,6 +25,7 @@
 
     .header-info {
       display: flex;
+      align-items: center;
 
       .house-icon {
         width: 64px;
@@ -33,8 +34,18 @@
       }
 
       .label-info-right {
+        .buy-house {
+          font-family: 'Rubik';
+          font-size: 24px;
+          line-height: 120%;
+          font-weight: 500;
+        }
+
         .saving-goal-label {
           color: #708797;
+          font-size: 16px;
+          line-height: 24px;
+          padding-top: 4px;
         }
       }
     }
@@ -59,9 +70,8 @@
 
             .input-amount {
               font-family: 'Rubik';
-              font-style: normal;
-              font-weight: 500;
               font-size: 24px;
+              font-weight: 500;
               line-height: 120%;
               color: #4D6475;
             }
@@ -145,6 +155,9 @@
           .change-month-icon {
             color: #8a9ca9;
             cursor: pointer;
+            font-size: 30px;
+            line-height: 120%;
+            margin-top: -5px;
           }
 
           .disable-change-month {
@@ -166,6 +179,12 @@
           outline: none;
         }
       }
+
+      .amount-label {
+        font-size: 14px;
+        line-height: 21px;
+        padding-bottom: 4px;
+      }
     }
 
     .monthly-amount {
@@ -182,6 +201,11 @@
         justify-content: space-between;
         margin: 0 32px;
 
+        .monthly-amount-label {
+          font-size: 20px;
+          line-height: 120%;
+        }
+
         .amount-data {
           color: #0079FF;
           font-family: 'Rubik';
@@ -196,6 +220,7 @@
       .description-bottom {
         background-color: #f4f8fa;
         font-size: 12px;
+        line-height: 120%;
         padding: 24px 32px;
         word-break: break-word;
       }
@@ -225,9 +250,27 @@
   }
 
   @media only screen and (max-width: 560px) {
+    .title-content-header {
+      font-size: 18px;
+      padding-top: 32px;
+    }
+
     .saving-goal-container {
       padding: 24px;
       min-height: auto;
+
+      .header-info {
+        .label-info-right {
+          .buy-house {
+            font-size: 20px;
+          }
+
+          .saving-goal-label {
+            font-size: 14px;
+            line-height: 21px;
+          }
+        }
+      }
 
       .input-content {
         height: auto;
@@ -235,10 +278,30 @@
         .total-amount {
           width: 100%;
           margin-right: 0;
+          padding-bottom: 16px;
         }
 
         .reach-goal {
           width: 100%;
+        }
+
+        .amount-label {
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+
+      .monthly-amount {
+        .amount-top {
+          margin: 0 24px;
+
+          .monthly-amount-label {
+            font-size: 18px;
+          }
+
+          .amount-data {
+            font-size: 24px;
+          }
         }
       }
     }

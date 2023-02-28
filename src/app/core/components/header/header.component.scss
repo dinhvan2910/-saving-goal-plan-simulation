@@ -8,4 +8,14 @@
     width: 100px;
     height: 32px;
   }
+
+  @media only screen and (max-width: 560px) {
+    height: 56px;
+    padding: 16px;
+
+    .logo-icon {
+      width: 75px;
+      height: 24px;
+    }
+  }
 }

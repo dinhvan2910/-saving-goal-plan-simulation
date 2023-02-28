@@ -5,7 +5,7 @@
   "TOTAL_AMOUNT": "Total amount",
   "REACH_GOAL_BY": "Reach goal by",
   "MONTHLY_AMOUNT": "Monthly amount",
-  "DESCRIPTION_BOTTOM": "You’re planning <span class='fw-600'>{{ totalMonth }} monthly deposits</span> to reach your <span class='fw-600'>{{ amount }}</span> goal by <span>{{ reachDate }}.</span>",
+  "DESCRIPTION_BOTTOM": "You’re planning <span class='fw-600'>{{ totalMonth }} monthly deposits</span> to reach your <span class='fw-600'>${{ amount }}</span> goal by <span class='fw-600'>{{ reachDate }}.</span>",
   "CONFIRM": "Confirm",
   "CONFIRM_TITLE": "Information has been set successfully!!"
 }

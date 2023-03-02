@@ -6,13 +6,21 @@ import { HeaderComponent } from '@core/components';
 import { MaterialModule } from '@core/material';
 import { TranslateModule } from '@ngx-translate/core';
 
-const COMPONENTS = [
-  HeaderComponent,
-];
-
 @NgModule({
-  imports: [CommonModule, RouterModule, MaterialModule, TranslateModule],
-  exports: [CommonModule, MaterialModule, TranslateModule, ...COMPONENTS],
-  declarations: [...COMPONENTS],
+  imports: [
+    CommonModule,
+    RouterModule,
+    MaterialModule,
+    TranslateModule
+  ],
+  exports: [
+    CommonModule,
+    MaterialModule,
+    TranslateModule,
+    HeaderComponent,
+  ],
+  declarations: [
+    HeaderComponent,
+  ],
 })
 export class CoreModule { }

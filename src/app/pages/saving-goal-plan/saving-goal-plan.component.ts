@@ -18,7 +18,7 @@ export class SavingGoalPlanComponent implements OnInit {
   constructor(
     private snackBar: MatSnackBar,
     private translateService: TranslateService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.amount = Number(localStorage.getItem(LOCAL_STORAGE_KEY.amount) || '0');

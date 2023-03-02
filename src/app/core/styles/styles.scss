@@ -14,32 +14,85 @@ body {
   font-family: 'Work Sans', sans-serif;
 }
 
-.fz-14 {
-  font-size: 14px;
+@for $i from 1 through 50 {
+  .fs-#{$i}px {
+    font-size: #{($i) + 'px'};
+    line-height: 120%;
+  }
+
+  .mt-#{$i}px {
+    margin-top: #{($i) + 'px'};
+  }
+
+  .mr-#{$i}px {
+    margin-right: #{($i) + 'px'};
+  }
+
+  .mb-#{$i}px {
+    margin-bottom: #{($i) + 'px'};
+  }
+
+  .ml-#{$i}px {
+    margin-left: #{($i) + 'px'};
+  }
 }
 
-.fz-16 {
-  font-size: 16px;
-}
+.custom-form-field {
+  width: 100%;
 
-.fz-20 {
-  font-size: 20px;
-}
+  .mat-form-field-infix {
+    top: -0.25em;
+    padding: 0.45em 0.5em 0.45em 0;
+  }
 
-.fz-24 {
-  font-size: 24px;
-}
+  .mat-form-field-outline {
+    background-color: #fff;
+    top: 0 !important;
+  }
 
-.mt-24p {
-  margin-top: 24px;
-}
+  &.mat-form-field-appearance-outline {
 
-.mt-32p {
-  margin-top: 32px;
-}
+    .mat-form-field-wrapper {
+      margin: 0;
+      padding-bottom: 0;
+      background-color: #fff;
+      height: 100%;
+    }
 
-.fw-500 {
-  font-weight: 500;
+    .mat-form-field-flex {
+      padding: 0;
+      height: 100%;
+      margin-top: 0;
+    }
+
+    .mat-form-field-prefix,
+    .mat-form-field-suffix {
+      top: -0.5em;
+    }
+
+    .mat-form-field-outline-start,
+    .mat-form-field-outline-end {
+      border-color: #e9eef2;
+    }
+
+    .mat-form-field-outline-start {
+      border-radius: 4px 0 0 4px;
+    }
+
+    .mat-form-field-outline-end {
+      border-radius: 0 4px 4px 0;
+    }
+
+    .mat-form-field-outline-thick .mat-form-field-outline-start,
+    .mat-form-field-outline-thick .mat-form-field-outline-end,
+    .mat-form-field-outline-thick .mat-form-field-outline-gap {
+      border-color: #1b31a8;
+    }
+
+    .mat-form-field-suffix .mat-icon-button {
+      top: 0.4em;
+    }
+  }
 }
 
 .fw-600 {

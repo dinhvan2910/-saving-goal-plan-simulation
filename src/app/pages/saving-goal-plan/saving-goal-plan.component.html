@@ -10,7 +10,7 @@
         <div class="saving-goal-label">{{ 'SAVING_GOAL' | translate }}</div>
       </div>
     </div>
-    <div class="input-content mt-24p">
+    <div class="input-content mt-24px">
       <div class="total-amount">
         <div class="amount-label">{{ 'TOTAL_AMOUNT' | translate }}</div>
         <mat-form-field appearance="outline" class="custom-form-field">
@@ -36,7 +36,7 @@
           (keydown.ArrowLeft)="onChangeMonth('previous')"
           (keydown.ArrowRight)="onChangeMonth('next')">
           <mat-icon
-            class="change-month-icon"
+            class="change-month-icon ml-12px"
             (click)="onChangeMonth('previous')"
             [ngClass]="totalMonth <= 1 ? 'disable-change-month' : ''">
             keyboard_arrow_left
@@ -45,13 +45,13 @@
             <div class="month">{{ reachDate | date : 'MMMM' }}</div>
             <div class="year">{{ reachDate.getFullYear() }}</div>
           </div>
-          <mat-icon class="change-month-icon" (click)="onChangeMonth('next')"> keyboard_arrow_right </mat-icon>
+          <mat-icon class="change-month-icon mr-12px" (click)="onChangeMonth('next')"> keyboard_arrow_right </mat-icon>
         </div>
       </div>
     </div>
-    <div class="monthly-amount mt-24p">
+    <div class="monthly-amount mt-24px">
       <div class="amount-top">
-        <div class="monthly-amount-label">{{ 'MONTHLY_AMOUNT' | translate }}</div>
+        <div class="monthly-amount-label fs-20px">{{ 'MONTHLY_AMOUNT' | translate }}</div>
         <div class="amount-data">{{ monthlyAmount }}</div>
       </div>
       <div
@@ -66,7 +66,7 @@
                 }
         "></div>
     </div>
-    <div class="confirm-btn-footer mt-32p">
+    <div class="confirm-btn-footer mt-32px">
       <button class="confirm-btn" (click)="onConfirm()">{{ 'CONFIRM' | translate }}</button>
     </div>
   </div>

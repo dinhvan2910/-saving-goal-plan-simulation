@@ -75,10 +75,14 @@ export class SavingGoalPlanComponent implements OnInit {
   }
 
   onConfirm() {
-    this.snackBar.open(this.translateService.instant('CONFIRM_TITLE'), this.translateService.instant('CLOSE'), {
-      horizontalPosition: 'center',
-      verticalPosition: 'bottom',
-      duration: 3000,
-    });
+    this.snackBar.open(
+      this.translateService.instant('CONFIRM_TITLE'),
+      this.translateService.instant('CLOSE'),
+      {
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom',
+        duration: 3000,
+      }
+    );
   }
 }

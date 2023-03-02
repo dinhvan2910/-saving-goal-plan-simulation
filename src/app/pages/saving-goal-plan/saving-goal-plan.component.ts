@@ -17,7 +17,7 @@ export class SavingGoalPlanComponent implements OnInit {
 
   constructor(
     private snackBar: MatSnackBar,
-    private translateService: TranslateService
+    private translateService: TranslateService,
   ) { }
 
   ngOnInit() {
@@ -70,11 +70,11 @@ export class SavingGoalPlanComponent implements OnInit {
     this.totalMonth = months <= 0 ? 0 : months;
     const monthlyAmount = this.amount / this.totalMonth;
     this.monthlyAmount = '$' + monthlyAmount.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
-    localStorage.setItem(LOCAL_STORAGE_KEY.amount, this.amount.toString());
-    localStorage.setItem(LOCAL_STORAGE_KEY.reachDate, this.reachDate.toISOString());
   }
 
   onConfirm() {
+    localStorage.setItem(LOCAL_STORAGE_KEY.amount, this.amount.toString());
+    localStorage.setItem(LOCAL_STORAGE_KEY.reachDate, this.reachDate.toISOString());
     this.snackBar.open(
       this.translateService.instant('CONFIRM_TITLE'),
       this.translateService.instant('CLOSE'),

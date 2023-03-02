@@ -4,7 +4,7 @@
   </div>
   <div class="saving-goal-container">
     <div class="header-info">
-      <mat-icon class="house-icon" aria-hidden="false" svgIcon="house"></mat-icon>
+      <mat-icon class="house-icon" aria-hidden="false" [svgIcon]="'house'"></mat-icon>
       <div class="label-info-right">
         <div class="buy-house">{{ 'BUY_A_HOUSE' | translate }}</div>
         <div class="saving-goal-label">{{ 'SAVING_GOAL' | translate }}</div>
@@ -15,7 +15,7 @@
         <div class="amount-label">{{ 'TOTAL_AMOUNT' | translate }}</div>
         <mat-form-field appearance="outline" class="custom-form-field">
           <span matPrefix>
-            <mat-icon class="dollar-icon" aria-hidden="false" svgIcon="dollar"></mat-icon>
+            <mat-icon class="dollar-icon" aria-hidden="false" [svgIcon]="'dollar'"></mat-icon>
           </span>
           <input
             matInput

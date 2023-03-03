@@ -22,8 +22,9 @@ export class SavingGoalPlanComponent implements OnInit {
 
   ngOnInit() {
     this.amount = Number(localStorage.getItem(LOCAL_STORAGE_KEY.amount) || '0');
-    if (localStorage.getItem(LOCAL_STORAGE_KEY.reachDate)) {
-      this.reachDate = new Date(localStorage.getItem(LOCAL_STORAGE_KEY.reachDate));
+    const reachDate = localStorage.getItem(LOCAL_STORAGE_KEY.reachDate);
+    if (reachDate) {
+      this.reachDate = new Date(reachDate);
       this.setDataMonthly();
     } else {
       this.onChangeMonth('next');
@@ -54,7 +55,7 @@ export class SavingGoalPlanComponent implements OnInit {
     this.setDataMonthly();
   }
 
-  getDaysOfMonth(year, month) {
+  getDaysOfMonth(year: number, month: number) {
     return new Date(year, month, 0).getDate();
   }
 

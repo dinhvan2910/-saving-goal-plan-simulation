@@ -69,7 +69,7 @@ describe('SavingGoalPlanComponent', () => {
 
   describe('getDaysOfMonth', () => {
     it('should return date', () => {
-      const date = new Date(2023, 2, 1);
+      const date = new Date(2023, 2, 1); //01/03/2023
       expect(
         component.getDaysOfMonth(date.getFullYear(), date.getMonth() + 1)
       ).toEqual(31);
@@ -78,21 +78,21 @@ describe('SavingGoalPlanComponent', () => {
 
   describe('setDataMonthly', () => {
     it(`should call setDataMonthly to return total month`, () => {
-      component.reachDate = new Date(2023, 5, 4);
+      component.reachDate = new Date(2023, 5, 4); //04/06/2023
       component.setDataMonthly();
       expect(component.totalMonth).toEqual(3);
     });
 
     it(`should call setDataMonthly to return monthly amount`, () => {
       component.amount = 5000;
-      component.reachDate = new Date(2027, 4, 4);
+      component.reachDate = new Date(2027, 4, 4); //04/05/2027
       component.setDataMonthly();
       expect(component.monthlyAmount).toEqual('$100.00');
     });
 
     it(`should call setDataMonthly to return monthly amount width big amount, totalMonth`, () => {
       component.amount = 524000210000.25;
-      component.reachDate = new Date(2060, 0, 10);
+      component.reachDate = new Date(2060, 0, 10); //10/01/2060
       component.setDataMonthly();
       expect(component.monthlyAmount).toEqual('$1,185,520,837.10');
     });
